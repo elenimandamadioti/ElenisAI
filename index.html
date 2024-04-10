@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandamadioti</title>
+    <link rel="icon" type="image/x-icon" href="/images/eye.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/reset.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style2.css">
+    <script src="https://kit.fontawesome.com/5fca49615f.js" crossorigin="anonymous"></script>
+    <script src="background.js"></script>
+
+</head>
+
+<body>
+    <main>
+        <!-- Fixed -->
+        <!-- Header -->
+        <header class="flex_row">
+            <div class="window_container flex_row">
+                <div class="window_controller"></div>
+                <div class="window_controller2"></div>
+                <div class="window_controller3"></div>
+            </div>
+
+            <div class="socials_nav flex_row flex_center">
+                <a href="https://www.linkedin.com/in/eleni-mandamadioti/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://medium.com/@elenimandamadiotik" target="_blank"><i class="fa-brands fa-medium"></i></a>
+            </div>
+        </header>
+        <!-- Z-index 3 -->
+        <div class="profile">
+            <img src="media/emoji.gif" alt="">
+
+            <div class="message">
+                <p>Hi! I'm happy to see you here! Check your notifications to see my proyects</p>
+            </div>
+        </div>
+    
+
+        </div>
+        <!-- Hero header -->
+        <div id="hero_background"></div>
+        <section class="hero_header" data-aos="fade-up">
+
+            <div id="section1" class="hero_container flex_column">
+                <p>Hover over my face to see more</p>
+                <h3>Eleni Mandamadioti</h3>
+                <h1>UX-UI designer based in Madrid.</h1>
+            </div>
+        </section>
+    </main>
+    <footer class="flex_column">
+        <div>
+            <h3>Let's chat</h3>
+            <a href="mailto:eleni@mandamadioti.com">eleni@mandamadioti.com</a>
+            <a href="tel:0034663520960">+34 663 520 960</a>
+        </div>
+        <p>Eleni Mandamadioti. Copyright and all that.</p>
+    </footer>
+
+    <script
+    src="https://app.livechatai.com/embed.js"
+    data-id="clutyjwho000fpvgtgxw4gydn"
+    async defer>
+  </script>
+
+<script>
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
+    const section2 = document.getElementById("section2");
+    const section1 = document.getElementById("section1");
+    const rect1 = section1.getBoundingClientRect();
+    const rect2 = section1.getBoundingClientRect();
+    let bgHasChanged = false
+
+    const scrollListener = (e) => {
+        lastKnownScrollPosition = window.scrollY;
+
+        if (!ticking) {
+            window.requestAnimationFrame(function () {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+    }
+
+
+    function doSomething(scrollPos) {
+        if (!bgHasChanged && scrollPos > rect1.height - rect2.height * 0.2) {
+            section2.classList.add("bg-white");
+            document.removeEventListener("scroll", scrollListener)
+        }
+    }
+
+    document.addEventListener('scroll', scrollListener);
+
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+
+</html>
